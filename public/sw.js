@@ -1,12 +1,15 @@
-// Service worker mínimo para que la PWA sea instalable. Cache-first
-// para assets estáticos, network-first para HTML.
+// Service worker mínimo. Cache-first para assets, network-first para HTML.
+// Usa paths relativos al scope para que funcione tanto en raíz como en subpath
+// (por ejemplo en GitHub Pages: /<repo>/).
 
-const CACHE = 'beat-blader-v1';
+const CACHE = 'beat-blader-v2';
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/beatmaps/song1.json',
+  './',
+  './index.html',
+  './manifest.webmanifest',
+  './beatmaps/song1.json',
+  './icon-192.png',
+  './icon-512.png',
 ];
 
 self.addEventListener('install', (event) => {
@@ -34,7 +37,7 @@ self.addEventListener('fetch', (event) => {
 
   if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(req).catch(() => caches.match('/index.html'))
+      fetch(req).catch(() => caches.match('./index.html') || caches.match('./'))
     );
     return;
   }

@@ -2,14 +2,14 @@
   "name": "Beat Blader",
   "short_name": "Beat Blader",
   "description": "Rhythm-action 3D — corre, corta, esquiva.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#05021a",
   "theme_color": "#05021a",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }

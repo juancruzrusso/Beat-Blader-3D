@@ -14,7 +14,7 @@ let duration = DEFAULT_DURATION;
 let bpm = DEFAULT_BPM;
 let onEndCb = null;
 
-export async function initAudio(songPath = '/songs/song1.mp3') {
+export async function initAudio(songPath = `${import.meta.env.BASE_URL}songs/song1.mp3`) {
   Tone.Transport.bpm.value = bpm;
 
   // Probamos si el .mp3 existe — un HEAD a Vite responde 404 si no está

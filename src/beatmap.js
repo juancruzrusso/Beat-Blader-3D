@@ -11,7 +11,7 @@ let nextNoteIndex = 0;
 
 export async function loadBeatmap(songId = 'song1') {
   try {
-    const res = await fetch(`/beatmaps/${songId}.json`);
+    const res = await fetch(`${import.meta.env.BASE_URL}beatmaps/${songId}.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     beatmap = await res.json();
     nextNoteIndex = 0;
