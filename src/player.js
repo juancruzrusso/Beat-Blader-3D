@@ -10,11 +10,11 @@ import { on } from './events.js';
 // del FOV en portrait pero permite snappear contra el borde.
 const X_MIN = LANE_X[0] - 0.15;
 const X_MAX = LANE_X[LANE_X.length - 1] + 0.15;
-const MOVE_SPEED = 7.5;             // unidades/seg con teclado
-const TOUCH_SENSITIVITY = 0.022;    // px → mundo. Más alto = menos drag necesario
-const SMOOTH = 16;                  // suavizado hacia targetX
-const RUN_HZ = 2.2;                 // ciclos de carrera por segundo
-const SWING_DURATION = 0.22;
+const MOVE_SPEED = 11;              // unidades/seg con teclado (hardcore)
+const TOUCH_SENSITIVITY = 0.026;    // px → mundo. Más alto = menos drag necesario
+const SMOOTH = 22;                  // suavizado hacia targetX (más snappy)
+const RUN_HZ = 3.0;                 // ciclos de carrera por segundo (corre más rápido)
+const SWING_DURATION = 0.18;
 
 let player;
 let body, head, leftLeg, rightLeg, leftArm, rightArm;

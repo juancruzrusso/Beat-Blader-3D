@@ -5,8 +5,8 @@ import { buildSynthTrack } from './synthTrack.js';
 // si no, levantamos un track electrónico sintetizado (Tone.Sequences).
 // En ambos casos getCurrentTime() devuelve Tone.Transport.seconds.
 
-const DEFAULT_BPM = 120;
-const DEFAULT_DURATION = 30;   // duración del track sintetizado
+const DEFAULT_BPM = 150;
+const DEFAULT_DURATION = 32;   // duración del track sintetizado
 
 let songLoaded = false;
 let player = null;

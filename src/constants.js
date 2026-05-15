@@ -1,6 +1,6 @@
 // Constantes globales del juego. Cambiar acá afecta a todo.
 
-export const TUNNEL_SPEED = 20;          // unidades por segundo
+export const TUNNEL_SPEED = 28;          // unidades por segundo (hardcore)
 export const TUNNEL_WIDTH = 4;           // ancho visible del túnel
 export const TUNNEL_HEIGHT = 3.5;
 
