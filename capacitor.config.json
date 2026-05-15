@@ -1,0 +1,19 @@
+{
+  "appId": "com.juancruz.beatblader",
+  "appName": "Beat Blader",
+  "webDir": "dist",
+  "ios": {
+    "contentInset": "never",
+    "preferredContentMode": "mobile"
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": true,
+      "style": "DARK",
+      "backgroundColor": "#05021a"
+    }
+  }
+}
