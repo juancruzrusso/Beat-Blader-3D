@@ -7,8 +7,8 @@ import { emit } from './events.js';
 // Colisión simple por proximidad en X y Z. No usamos Box3 porque sabemos
 // los tamaños de antemano; un AABB esférico aproximado es suficiente.
 
-const HIT_DZ = 0.7;
-const HIT_DX = 0.7;
+const HIT_DZ = 0.55;
+const HIT_DX = 0.55;
 
 export function initCollisions() {
   // Nada que inicializar (las dependencias se importan directamente).

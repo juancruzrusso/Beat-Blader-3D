@@ -20,8 +20,8 @@ export function initObstacles(_scene) {
 function createSlot() {
   const group = new THREE.Group();
 
-  // Target (cubo cyan)
-  const targetGeo = new THREE.BoxGeometry(0.9, 0.9, 0.9);
+  // Target (cubo cyan) — un toque más chico para que no tape al personaje
+  const targetGeo = new THREE.BoxGeometry(0.7, 0.7, 0.7);
   const targetMat = new THREE.MeshStandardMaterial({
     color: COLORS.target,
     emissive: COLORS.target,
@@ -36,7 +36,7 @@ function createSlot() {
   target.add(new THREE.LineSegments(wireGeo, wireMat));
 
   // Hazard (octaedro/púa roja)
-  const hazardGeo = new THREE.OctahedronGeometry(0.65, 0);
+  const hazardGeo = new THREE.OctahedronGeometry(0.5, 0);
   const hazardMat = new THREE.MeshStandardMaterial({
     color: COLORS.hazard,
     emissive: COLORS.hazard,

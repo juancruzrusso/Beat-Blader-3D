@@ -1,15 +1,16 @@
 import * as Tone from 'tone';
+import { buildSynthTrack } from './synthTrack.js';
 
 // Wrapper de Tone.js. Si existe public/songs/song1.mp3 lo reproducimos,
-// si no, fallback a un metrónomo a 120 BPM. En ambos casos getCurrentTime()
-// devuelve Tone.Transport.seconds — timing preciso.
+// si no, levantamos un track electrónico sintetizado (Tone.Sequences).
+// En ambos casos getCurrentTime() devuelve Tone.Transport.seconds.
 
 const DEFAULT_BPM = 120;
-const DEFAULT_DURATION = 30;   // duración del fallback metrónomo
+const DEFAULT_DURATION = 30;   // duración del track sintetizado
 
 let songLoaded = false;
 let player = null;
-let metronomeScheduled = false;
+let synthScheduled = false;
 let duration = DEFAULT_DURATION;
 let bpm = DEFAULT_BPM;
 let onEndCb = null;
@@ -35,24 +36,16 @@ export async function initAudio(songPath = `${import.meta.env.BASE_URL}songs/son
       songLoaded = true;
       console.log(`[audio] Canción cargada: ${songPath} (${duration.toFixed(1)}s)`);
     } catch (e) {
-      console.warn('[audio] No se pudo cargar la canción, uso metrónomo', e);
+      console.warn('[audio] No se pudo cargar la canción, uso synth track', e);
       songLoaded = false;
     }
   } else {
-    console.log('[audio] No hay song1.mp3, usando metrónomo fallback @ 120 BPM');
+    console.log('[audio] No hay song1.mp3, usando synth track @ 120 BPM');
   }
 
-  if (!songLoaded && !metronomeScheduled) {
-    const synth = new Tone.MembraneSynth({
-      pitchDecay: 0.04,
-      octaves: 4,
-      envelope: { attack: 0.001, decay: 0.18, sustain: 0, release: 0.08 },
-    }).toDestination();
-    synth.volume.value = -14;
-    Tone.Transport.scheduleRepeat((time) => {
-      synth.triggerAttackRelease('C2', '16n', time);
-    }, '4n');
-    metronomeScheduled = true;
+  if (!songLoaded && !synthScheduled) {
+    buildSynthTrack();
+    synthScheduled = true;
     duration = DEFAULT_DURATION;
   }
 }
