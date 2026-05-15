@@ -23,13 +23,15 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(COLORS.bgDeep);
 scene.fog = new THREE.Fog(COLORS.bgDeep, 16, 60);
 
+// FOV un poco más amplio para que en portrait el túnel angosto se vea completo
+// sin recortar al jugador cuando está en los lanes laterales.
 const camera = new THREE.PerspectiveCamera(
-  72,
+  80,
   window.innerWidth / window.innerHeight,
   0.1, 200,
 );
-camera.position.set(0, 2.0, 4.8);
-camera.lookAt(0, 1.0, -10);
+camera.position.set(0, 2.2, 5.3);
+camera.lookAt(0, 1.1, -10);
 
 // Iluminación
 scene.add(new THREE.AmbientLight(0xffffff, 0.45));

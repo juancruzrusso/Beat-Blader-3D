@@ -1,11 +1,11 @@
 // Constantes globales del juego. Cambiar acá afecta a todo.
 
 export const TUNNEL_SPEED = 20;          // unidades por segundo
-export const TUNNEL_WIDTH = 6;
-export const TUNNEL_HEIGHT = 4;
+export const TUNNEL_WIDTH = 4;           // ancho visible del túnel
+export const TUNNEL_HEIGHT = 3.5;
 
-// 3 lanes: izquierda, centro, derecha
-export const LANE_X = [-2, 0, 2];
+// 3 lanes más juntas para que un golpe corto te lleve de borde a borde en mobile
+export const LANE_X = [-1.2, 0, 1.2];
 
 // Zonas del túnel sobre el eje Z
 export const SPAWN_Z = -45;              // dónde aparecen los obstáculos (lejos)

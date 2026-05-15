@@ -13,7 +13,11 @@ let menuEl, loadingEl, gameoverEl, winEl, pauseEl;
 
 const SCREENS_HTML = `
   <div id="menu" class="screen">
-    <h1 class="title">BEAT BLADER</h1>
+    <div class="brand">
+      <span class="brand-blade" aria-hidden="true"></span>
+      <h1 class="title">BEAT BLADER</h1>
+      <span class="brand-blade" aria-hidden="true"></span>
+    </div>
     <p class="subtitle">Cortá al ritmo · Esquivá las púas</p>
     <button id="btn-play" class="btn-big">PLAY</button>
     <p class="hint">Flechas o arrastrar · ESC pausa · R retry</p>
